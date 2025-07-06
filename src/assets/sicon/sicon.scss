@@ -1,0 +1,15 @@
+
+@import 'icons'; // Import your icon styles
+
+// Your other global styles go here
+body {
+  font-family: Arial, sans-serif;
+}
+
+// Define a class for an icon if needed
+.custom-icon {
+  @include icon('home');
+  width: 32px;
+  height: 32px;
+  background-color: red;
+}

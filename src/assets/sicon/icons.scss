@@ -1,0 +1,23 @@
+// Define a map to store icon information
+$icons: (
+  home: 'icons/home.svg',
+  user: 'icons/person.svg'
+  // Add more icons here...
+);
+
+// Define a mixin to generate styles for icons
+@mixin icon($name) {
+  $svg-url: map-get($icons, $name);
+  .icon-#{$name} {
+    width: 24px; // Adjust as needed
+    height: 24px; // Adjust as needed
+    fill: currentColor; // Icons will inherit text color
+    background-image: url('#{$svg-url}');
+    background-size: cover;
+  }
+}
+
+// Iterate over the icons map and generate styles
+@each $name, $svg-url in $icons {
+  @include icon($name);
+}
